@@ -1,10 +1,29 @@
-  h1 {
-    text-align: right;
-    margin-right: 3.75rem;
-    @media only screen and (max-width: 768px) {
-      font-size:1.875rem;
-      }
-  }
+h1 {
+  text-align: right;
+  margin-right: 3.75rem;
+  @media only screen and (max-width: 768px) {
+    font-size:1.875rem;
+    }
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  font-size: 1.5rem;
+  @media only screen and (max-width: 768px) {
+    font-size:1.875rem;
+    }
+}
+h3 {
+  font-family: 'Playfair Display', serif;
+  text-align: left;
+  font-size: 1.4rem;
+  font-style:italic;
+  @media only screen and (max-width: 768px) {
+    font-size:1.875rem;
+    }
+}
 
 .item-header {
   grid-area: header;
@@ -17,13 +36,14 @@
 }
 .item-main {
   /* Main padding starts here */
-  padding-top: 15.625rem;
+  padding-top: 15rem;
   grid-area: main;
 }
 .item-footer {
   grid-area: footer;
   background: #313131;
   color: white;
+  padding-top: 6.5rem;
 }
 
 .grid-container {
@@ -51,25 +71,25 @@
 /*menu nav button*/
 
 body {
-    min-height: 100vh;
-    background-color: #F7F9F7;
-    font-family: 'Playfair Display', serif;
-    color: black;
-  }
+  min-height: 100vh;
+  background-color: #F7F9F7;
+  font-family: 'Playfair Display', serif;
+  color: black;
+}
 
-  #overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 6.25rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* Black background with opacity */
-    z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-  }
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 6.25rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2); /* Black background with opacity */
+  z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
 
 a {
   color: inherit;
@@ -85,7 +105,7 @@ a:hover {
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
   }
-  
+
   .wrapper {
     margin-top: 0;
     text-align: left;
@@ -99,23 +119,23 @@ a:hover {
     text-align: left;
     vertical-align: middle;
     font-size: 4.375rem;
-    margin-left: 12%;
+    margin-left: 15%;
     /* text-decoration: underline; */
     /* font-weight:bolder; */
   }
-  
+
   span.cursor {
     font-size: 4.375rem;
     vertical-align: middle;
     -webkit-animation: blink 0.9s 15;
     -moz-animation: blink 0.9s 15;
     animation: blink 0.9s 15;
-}
+  }
 
-span.cursor.hidden {
+  span.cursor.hidden {
     display: none; /* hide cursor after header is typed out */
-}
-  
+  }
+
   @media (max-width: 768px) {
     .wrapper {
       margin-top: 0;
@@ -163,16 +183,16 @@ span.cursor.hidden {
     }
   }
 
-.sticky {
+  .sticky {
     /* position: sticky; */
     position: fixed;
     z-index: 5;
-}
+  }
 
-* {
+  * {
     box-sizing: border-box;
   }
-  
+
   button {
     width: 17.5rem;
     aspect-ratio: 1;
@@ -190,7 +210,7 @@ span.cursor.hidden {
         margin-left: 0px !important;
     }
   }
-  
+
   /* button:is(:hover, :focus-visible) {
     background: hsl(0, 0%, 93%);
     Dark mode
@@ -202,11 +222,11 @@ span.cursor.hidden {
     outline-offset: 1rem;
     outline-width: 4px;
   } */
-  
+
   button svg:first-of-type {
     width: 65%;
   }
-  
+
   button rect {
     transform-box: fill-box;
     transform-origin: 50% 50%;
@@ -223,7 +243,7 @@ span.cursor.hidden {
   rect {
     transition: rotate 0.2s 0s, translate 0.2s 0.2s;
   }
-  
+
   [aria-pressed=true] rect:nth-of-type(1) {
     translate: 0 333%;
     rotate: -45deg;
@@ -239,7 +259,7 @@ span.cursor.hidden {
     rotate: 90deg;
     transition: rotate 1s 0.4s;
   }
-  
+
   @supports (--custom: linear()) {
     :root {
       --elastic-out: linear(
@@ -274,7 +294,7 @@ span.cursor.hidden {
       transition-timing-function: var(--elastic-out);
     }
   }
-  
+
   .controls {
     position: fixed;
     top: 1rem;
@@ -558,18 +578,39 @@ span.cursor.hidden {
 }
 
 
-/* images */
-.img1 {
+/* about me images */
+.about {
+  padding-top: 6.5rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
   width: 350px;
   height:230px;
   padding: 5px;
   padding-bottom: 10px;
+  float: right;
   /* data-mdb-toggle:"animation";
   data-mdb-animation:"slide-in-left"; */
 }
 
+.caption {
+  float: left;
+  padding-top: 30px;
+  padding-left: 15px;
+}
+
 .img1:hover {
   filter:brightness(50%);
+}
+
+/* projects section */
+.projects {
+  padding-top: 6.5rem;
 }
 
 /*loader*/
