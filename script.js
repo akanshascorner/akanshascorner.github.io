@@ -92,8 +92,11 @@ $(function() {
 	var message = {
 
 		message: [
-			'Hello World',
-            'Welcome '
+			' software engineer.',
+			' university mentor.',
+			' hackathon enthusiast.',
+			' cs teaching assistant.',
+			' student athlete.'
 		],
 		counterS: 0,
 		counterL: 0,
@@ -113,7 +116,7 @@ $(function() {
 				  that 	    = this,
 				  speed 	  = 0;
 
-            // Check if the current message is "Akansha Codes" and stop deleting
+            // Check if the current message is "____" and stop deleting
 			if (this.message[this.counterS] === 'Welcome ' && this.counterL >= message.length - 1 && !this.deleteS) {
 				this.deleteS = true; // Set deleteS to true to stop further deletion
                 setTimeout(function () {

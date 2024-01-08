@@ -1,6 +1,7 @@
 h1 {
-  text-align: right;
-  margin-right: 3.75rem;
+  text-align: left;
+  font-size: 4rem;
+  margin-left: 15%;
   @media only screen and (max-width: 768px) {
     font-size:1.875rem;
     }
@@ -27,9 +28,9 @@ h3 {
 
 .item-header {
   grid-area: header;
-  font-family: 'Silkscreen', sans-serif;
+  /* font-family: 'Silkscreen', sans-serif; */
   font-weight: lighter;
-  background:#F7F9F7;
+  /* background:#F7F9F7; */
   height: 6.25rem;
   display: grid;
   align-items: center;
@@ -68,6 +69,35 @@ h3 {
   }
 }
 
+/* nav */
+a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgb(74, 76, 82);
+}
+
+a:hover, a:active, nav.active {
+  color: #000000; 
+  /* border-bottom: 2px solid; */
+  text-decoration: none;
+  /* padding-bottom: .05em; */
+}
+
+.nav.active {
+  color: #000000; 
+  /* border-bottom: 2px solid; */
+  text-decoration: none;
+  /* padding-bottom: .05em; */
+}
+
+.navbar-expand-sm {
+  justify-content: right;
+}
+
 /*menu nav button*/
 
 body {
@@ -91,15 +121,6 @@ body {
   cursor: pointer; /* Add a pointer on hover */
 }
 
-a {
-  color: inherit;
-}
-
-a:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-
   .col-6 {
     display: flex;
     justify-content: center; /* Center content horizontally */
@@ -108,18 +129,17 @@ a:hover {
 
   .wrapper {
     margin-top: 0;
-    text-align: left;
     width: 100%;
   }
   .wrapper span {
     font-size: 1.625rem;
+    line-height: 1.2;
   }
 
   span.text {
     text-align: left;
     vertical-align: middle;
-    font-size: 4.375rem;
-    margin-left: 15%;
+    font-size: 4rem;
     /* text-decoration: underline; */
     /* font-weight:bolder; */
   }
