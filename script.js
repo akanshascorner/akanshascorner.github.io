@@ -92,11 +92,9 @@ $(function() {
 	var message = {
 
 		message: [
-			' software engineer.',
-			' university mentor.',
-			' hackathon enthusiast.',
-			' cs teaching assistant.',
-			' student athlete.'
+			'software engineer.',
+			'teaching assistant.',
+			'student athlete.',
 		],
 		counterS: 0,
 		counterL: 0,

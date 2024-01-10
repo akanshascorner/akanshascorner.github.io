@@ -1,6 +1,6 @@
 h1 {
   text-align: left;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-left: 15%;
   @media only screen and (max-width: 768px) {
     font-size:1.875rem;
@@ -130,22 +130,21 @@ body {
   .wrapper {
     margin-top: 0;
     width: 100%;
+    margin-left: 15%;
   }
   .wrapper span {
-    font-size: 1.625rem;
+    font-size: 3rem;
     line-height: 1.2;
   }
 
   span.text {
     text-align: left;
     vertical-align: middle;
-    font-size: 4rem;
-    /* text-decoration: underline; */
-    /* font-weight:bolder; */
+    font-size: 3rem;
   }
 
   span.cursor {
-    font-size: 4.375rem;
+    font-size: 3rem;
     vertical-align: middle;
     -webkit-animation: blink 0.9s 15;
     -moz-animation: blink 0.9s 15;
