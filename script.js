@@ -60,7 +60,7 @@ function on() {
 
     // Iterate through the collection and set the background for each element
     for (var i = 0; i < itemHeaders.length; i++) {
-        itemHeaders[i].style.background = "#C6C7C6";
+        // itemHeaders[i].style.background = "#C6C7C6";
     }
 	timeline.to([CHEST, RECT], { x: '0%', duration: 0.5, ease: 'power2.out'});
 }

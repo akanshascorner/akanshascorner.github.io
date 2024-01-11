@@ -37,14 +37,14 @@ h3 {
 }
 .item-main {
   /* Main padding starts here */
-  padding-top: 15rem;
+  padding-top: 7rem;
   grid-area: main;
 }
 .item-footer {
   grid-area: footer;
   background: #313131;
   color: white;
-  padding-top: 6.5rem;
+  padding-top: 4rem;
 }
 
 .grid-container {
@@ -112,7 +112,7 @@ body {
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
-  top: 6.25rem;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -599,7 +599,7 @@ body {
 
 /* about me images */
 .about {
-  padding-top: 6.5rem;
+  padding-top: 4rem;
 }
 
 .image-container {
@@ -629,7 +629,7 @@ body {
 
 /* projects section */
 .projects {
-  padding-top: 6.5rem;
+  padding-top: 4rem;
 }
 
 /*loader*/
