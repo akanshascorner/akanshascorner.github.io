@@ -83,8 +83,8 @@ a {
 }
 
 a:hover, a:active, nav.active {
-  /* color: #000000;  */
-  color: white;
+  color: #000000; 
+  /* color: white; */
   /* border-bottom: 2px solid; */
   text-decoration: none;
   /* padding-bottom: .05em; */
