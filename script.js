@@ -34,7 +34,7 @@ const projectsDrawer = document.querySelector('.chest-drawer--middle');
 const contactDrawer = document.querySelector('.chest-drawer--bottom');
 // const scrollOffset = 6.5;
 homeDrawer.addEventListener('click', function () {
-    const home = document.querySelector('.about');
+    const home = document.querySelector('.item-header'); //about or item-header
     home.scrollIntoView({ behavior: 'smooth' });
 	HANDLE_TOGGLE();
 });
@@ -74,7 +74,7 @@ function off() {
 
 	// Iterate through the collection and set the background for each element
 	for (var i = 0; i < itemHeaders.length; i++) {
-		itemHeaders[i].style.background = "#F7F9F7";
+		// itemHeaders[i].style.background = "#F7F9F7";
 	}
 	timeline.to([CHEST, RECT], { x: '-185%', duration: 0.5, ease: 'power2.in', });
 }

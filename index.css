@@ -4,6 +4,7 @@ h1 {
   margin-left: 15%;
   @media only screen and (max-width: 768px) {
     font-size:1.875rem;
+    margin-left: 0%;
     }
 }
 h2 {
@@ -77,11 +78,13 @@ a {
   font-weight: 400;
   margin-left: 10px;
   margin-right: 10px;
-  color: rgb(74, 76, 82);
+  /* color: rgb(74, 76, 82); */
+  color: #F7F9F7;
 }
 
 a:hover, a:active, nav.active {
-  color: #000000; 
+  /* color: #000000;  */
+  color: white;
   /* border-bottom: 2px solid; */
   text-decoration: none;
   /* padding-bottom: .05em; */
@@ -102,9 +105,11 @@ a:hover, a:active, nav.active {
 
 body {
   min-height: 100vh;
-  background-color: #F7F9F7;
+  /* background-color: #F7F9F7;
+  color: black; */
   font-family: 'Playfair Display', serif;
-  color: black;
+  background: #313131;
+  color: white;
 }
 
 #overlay {
@@ -129,8 +134,11 @@ body {
 
   .wrapper {
     margin-top: 0;
-    width: 100%;
+    /* width: 100vw; */
     margin-left: 15%;
+    @media only screen and (max-width: 768px) {
+      margin-left: 0%;
+      }
   }
   .wrapper span {
     font-size: 3rem;
@@ -249,7 +257,8 @@ body {
   button rect {
     transform-box: fill-box;
     transform-origin: 50% 50%;
-    fill: hsl(0, 0%, 12%);
+    /* fill: hsl(0, 0%, 12%); */
+    fill: #F7F9F7;
     /* Dark mode
     fill: hsl(0 0% 98%); */
   }
@@ -329,6 +338,7 @@ body {
     box-sizing: border-box;
   }
   body {
+    overflow-x: hidden !important;
     min-height: 100vh;
     left: 1.25rem;
   }
@@ -599,17 +609,21 @@ body {
 
 /* about me images */
 .about {
+  background: #313131;
+  color: white;
   padding-top: 4rem;
 }
 
 .image-container {
   display: flex;
   justify-content: center;
+  margin-left: 10%;
+  margin-right: 13%;
 }
 
 .image {
-  width: 350px;
-  height:230px;
+  width: 400px;
+  /* height:230px; */
   padding: 5px;
   padding-bottom: 10px;
   float: right;
@@ -631,6 +645,86 @@ body {
 .projects {
   padding-top: 4rem;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+
+.container {
+	position: relative;
+  font-family: "Figtree", sans-serif;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 1em;
+	width: 100vw;
+	height: 400px;
+	transition: all 400ms;
+}
+
+.container:hover .box {
+	filter: grayscale(100%) opacity(24%);
+}
+
+.box {
+	position: relative;
+	background: var(--img) center center;
+	background-size: cover;
+	transition: all 400ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .box:hover {
+	filter: grayscale(0%) opacity(100%);
+}
+
+.container:has(.box-1:hover) {
+	grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-2:hover) {
+	grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-3:hover) {
+	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+}
+
+.container:has(.box-4:hover) {
+	grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+}
+
+.container:has(.box-5:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+}
+
+.box:nth-child(odd) {
+	transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+	transform: translateY(16px);
+}
+
+.box::after {
+	content: attr(data-text);
+	position: absolute;
+	bottom: 20px;
+	background: #000;
+	color: #fff;
+	padding: 10px 10px 10px 14px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transform: translateY(60px);
+	opacity: 0;
+	transition: all 400ms;
+}
+
+.box:hover::after {
+	transform: translateY(0);
+	opacity: 1;
+	transition-delay: 400ms;
+}
+
 
 /*loader*/
 #preloader {
