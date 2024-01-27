@@ -78,8 +78,8 @@ a {
   font-weight: 400;
   margin-left: 10px;
   margin-right: 10px;
-  /* color: rgb(74, 76, 82); */
-  color: #F7F9F7;
+  color: rgb(74, 76, 82);
+  /* color: #F7F9F7; */
 }
 
 a:hover, a:active, nav.active {
@@ -105,11 +105,11 @@ a:hover, a:active, nav.active {
 
 body {
   min-height: 100vh;
-  /* background-color: #F7F9F7;
-  color: black; */
+  background-color: #F7F9F7;
+  color: black;
   font-family: 'Playfair Display', serif;
-  background: #313131;
-  color: white;
+  /* background: #313131;
+  color: white; */
 }
 
 #overlay {
@@ -257,8 +257,8 @@ body {
   button rect {
     transform-box: fill-box;
     transform-origin: 50% 50%;
-    /* fill: hsl(0, 0%, 12%); */
-    fill: #F7F9F7;
+    fill: hsl(0, 0%, 12%);
+    /* fill: #F7F9F7; */
     /* Dark mode
     fill: hsl(0 0% 98%); */
   }
