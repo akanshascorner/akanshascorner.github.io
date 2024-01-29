@@ -43,8 +43,8 @@ h3 {
 }
 .item-footer {
   grid-area: footer;
-  background: #313131;
-  color: white;
+  background: var(--contact-bg-color);
+  color: var(--contact-text-color);
   padding-top: 4rem;
 }
 
@@ -101,15 +101,25 @@ a:hover, a:active, nav.active {
   justify-content: right;
 }
 
+.navbar {
+  padding-top: 0 !important;
+  margin-right: 10px !important;
+}
+
 /*menu nav button*/
+:root {
+  --bg-color: #F7F9F7; /* Default background color for light mode */
+  --text-color: black;   /* Default text color for light mode */
+  --svg-color: hsl(0, 0%, 12%); /* Default nav toggle color for light mode */
+  --contact-bg-color: #313131;
+  --contact-text-color: white;
+}
 
 body {
   min-height: 100vh;
-  background-color: #F7F9F7;
-  color: black;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: 'Playfair Display', serif;
-  /* background: #313131;
-  color: white; */
 }
 
 #overlay {
@@ -257,10 +267,7 @@ body {
   button rect {
     transform-box: fill-box;
     transform-origin: 50% 50%;
-    fill: hsl(0, 0%, 12%);
-    /* fill: #F7F9F7; */
-    /* Dark mode
-    fill: hsl(0 0% 98%); */
+    fill: var(--svg-color);
   }
   .unset rect {
     transform-box: unset;
@@ -609,8 +616,6 @@ body {
 
 /* about me images */
 .about {
-  background: #313131;
-  color: white;
   padding-top: 4rem;
 }
 

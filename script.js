@@ -1,6 +1,35 @@
 const TOGGLE = document.querySelector('button');
 const CHEST = document.querySelector('.chest');
 const RECT = document.querySelector('.nav-rect');
+const themeSwitch = document.getElementById('themeSwitch');
+const root = document.documentElement;
+
+// Function to toggle light and dark themes
+function toggleTheme() {
+	if (themeSwitch.checked) {
+		root.style.setProperty('--bg-color', '#F7F9F7'); // Light mode background color
+		root.style.setProperty('--text-color', 'black');  // Light mode text color
+		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
+		root.style.setProperty('--contact-bg-color', '#313131'); //Light mode contact footer bg color
+		root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
+		themeSwitch.nextElementSibling.textContent = 'Light Mode';
+	} else {
+		root.style.setProperty('--bg-color', '#313131');  // Dark mode background color
+		root.style.setProperty('--text-color', 'white'); // Dark mode text color
+		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
+		root.style.setProperty('--contact-bg-color', '#F7F9F7'); // Dark mode contact footer bg color
+		root.style.setProperty('--contact-text-color', 'black'); // Dark mode contact footer text color
+		themeSwitch.nextElementSibling.textContent = 'Dark Mode';
+	}
+}
+
+themeSwitch.addEventListener('change', toggleTheme);
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme === 'dark') {
+	themeSwitch.checked = true;
+	toggleTheme();
+}
 
 // Set initial state: move chest off-screen to the left
 gsap.set([CHEST, RECT], { x: '-185%'});
