@@ -12,14 +12,18 @@ function toggleTheme() {
 		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
 		root.style.setProperty('--contact-bg-color', '#313131'); //Light mode contact footer bg color
 		root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
-		themeSwitch.nextElementSibling.textContent = 'Light Mode';
+		if (themeSwitch.nextElementSibling) {
+			themeSwitch.nextElementSibling.textContent = 'Light Mode';
+		}
 	} else {
 		root.style.setProperty('--bg-color', '#313131');  // Dark mode background color
 		root.style.setProperty('--text-color', 'white'); // Dark mode text color
 		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
 		root.style.setProperty('--contact-bg-color', '#F7F9F7'); // Dark mode contact footer bg color
 		root.style.setProperty('--contact-text-color', 'black'); // Dark mode contact footer text color
-		themeSwitch.nextElementSibling.textContent = 'Dark Mode';
+		if (themeSwitch.nextElementSibling) {
+			themeSwitch.nextElementSibling.textContent = 'Dark Mode';
+		}
 	}
 }
 
@@ -43,11 +47,17 @@ const HANDLE_TOGGLE = () => {
   if (isPressed) {
 	// Move the chest back on-screen from the left
 	on();
+	if (!themeSwitch.checked) {
+		root.style.setProperty('--svg-color', 'hsl(0 0% 12%)');// Light mode svg color
+	}
   } else {
 	// Move the chest off-screen to the left
 	off();
 	//reset all drawers preference to 200 or 300? 300 keeps drawer open, 200 closes it
 	setTimeout(resetDrawers, 250);
+	if (!themeSwitch.checked) {
+		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
+	}
   }
 };
 
