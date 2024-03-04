@@ -42,7 +42,7 @@ h3 {
 }
 .item-main {
   /* Main padding starts here */
-  padding-top: 7rem;
+  padding-top: 2rem;
   grid-area: main;
   margin: 5rem;
   margin-top:0;
