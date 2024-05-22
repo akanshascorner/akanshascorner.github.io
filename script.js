@@ -7,33 +7,24 @@ const root = document.documentElement;
 // Function to toggle light and dark themes
 function toggleTheme() {
 	if (themeSwitch.checked) {
-		root.style.setProperty('--bg-color', '#F7F9F7'); // Light mode background color
-		root.style.setProperty('--text-color', 'black');  // Light mode text color
-		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
-		root.style.setProperty('--contact-bg-color', '#313131'); //Light mode contact footer bg color
-		root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
-		if (themeSwitch.nextElementSibling) {
-			themeSwitch.nextElementSibling.textContent = 'Light Mode';
-		}
-	} else {
-		root.style.setProperty('--bg-color', '#313131');  // Dark mode background color
+		root.style.setProperty('--bg-color', '#181D27');  // Dark mode background color
+		// root.style.setProperty('--bg-color', '#2D283E'); // Dark mode purple background color
 		root.style.setProperty('--text-color', 'white'); // Dark mode text color
 		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
-		root.style.setProperty('--contact-bg-color', '#F7F9F7'); // Dark mode contact footer bg color
+		root.style.setProperty('--menu-bg-color', '#2D283E');// Dark mode menu background color
+		root.style.setProperty('--contact-bg-color', '#FFFDF3'); // Dark mode contact footer bg color
 		root.style.setProperty('--contact-text-color', 'black'); // Dark mode contact footer text color
-		if (themeSwitch.nextElementSibling) {
-			themeSwitch.nextElementSibling.textContent = 'Dark Mode';
-		}
+	} else {
+		root.style.setProperty('--bg-color', '#FFFDF3'); // Light mode background color
+		root.style.setProperty('--text-color', 'black');  // Light mode text color
+		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
+		root.style.setProperty('--menu-bg-color', '#FFFDF3');// light mode menu background color
+		root.style.setProperty('--contact-bg-color', '#181D27'); //Light mode contact footer bg color
+		root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
 	}
 }
 
 themeSwitch.addEventListener('change', toggleTheme);
-
-const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') {
-	themeSwitch.checked = true;
-	toggleTheme();
-}
 
 // Set initial state: move chest off-screen to the left
 gsap.set([CHEST, RECT], { x: '-185%'});
@@ -47,17 +38,17 @@ const HANDLE_TOGGLE = () => {
   if (isPressed) {
 	// Move the chest back on-screen from the left
 	on();
-	if (!themeSwitch.checked) {
-		root.style.setProperty('--svg-color', 'hsl(0 0% 12%)');// Light mode svg color
-	}
+	// if (themeSwitch.checked) {
+	// 	root.style.setProperty('--svg-color', 'hsl(0 0% 12%)');// Light mode svg color
+	// }
   } else {
 	// Move the chest off-screen to the left
 	off();
 	//reset all drawers preference to 200 or 300? 300 keeps drawer open, 200 closes it
 	setTimeout(resetDrawers, 250);
-	if (!themeSwitch.checked) {
-		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
-	}
+	// if (themeSwitch.checked) {
+	// 	root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
+	// }
   }
 };
 
@@ -113,7 +104,7 @@ function off() {
 
 	// Iterate through the collection and set the background for each element
 	for (var i = 0; i < itemHeaders.length; i++) {
-		// itemHeaders[i].style.background = "#F7F9F7";
+		// itemHeaders[i].style.background = "#FFFDF3";
 	}
 	timeline.to([CHEST, RECT], { x: '-185%', duration: 0.5, ease: 'power2.in', });
 }
@@ -130,10 +121,13 @@ function resetDrawers() {
 $(function() {
 	var message = {
 
+		// message: [
+		// 	'software engineer.',
+		// 	'teaching assistant.',
+		// 	'student athlete.',
+		// ],
 		message: [
-			'software engineer.',
-			'teaching assistant.',
-			'student athlete.',
+			'Hello!'
 		],
 		counterS: 0,
 		counterL: 0,
@@ -168,8 +162,8 @@ $(function() {
 				speed = 90;
 			}
 			else {
-				this.deleteS = true;
-				speed = this.message[this.counterS] == message ? 1000 : 60;
+				this.deleteS = true; 
+				speed = this.message[this.counterS] == message ? 10000 : 60;
 				this.$text.text(message);
 				if (message == '') {
 					this.deleteS = false;

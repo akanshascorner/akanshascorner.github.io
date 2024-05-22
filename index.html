@@ -7,11 +7,13 @@
 <title>Welcome</title>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script> -->
+
+<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
 <style>
 @import url(index.css);
 </style>
@@ -30,7 +32,20 @@
                     <li class="nav-item">
                     <!-- <a class="nav-link" href="https://docs.google.com/document/d/1jpZXkBdQEBVozQ24TrSicakt09K0z_mk_STt7KdrDFE/edit?usp=sharing">Resume</a> -->
                     </li>
-                    <input type="checkbox" id="themeSwitch" class="l" checked>
+                    <!-- <input type="checkbox" id="themeSwitch" class="l" checked> -->
+                    <label>
+                        <input type="checkbox" name="checkbox" class="toggle-checkbox" id="themeSwitch"/>
+                        <div class="toggle-slot">
+                          <div class="sun-icon-wrapper">
+                            <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"> </div>
+                          </div>
+                    
+                          <div class="toggle-button"></div>
+                          <div class="moon-icon-wrapper">
+                            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"> </div>
+                          </div>
+                        </div>
+                    </label>
                 </ul>
             </nav>
         </div>
@@ -89,18 +104,32 @@
             </div>
         </div>
         <div class="item-main">
-            <h1>Hey!</h1>
+            <!-- <h1>Hey!</h1>
             <div class="wrapper row"><span>I'm Akansha, a&nbsp;</span><span class="text"></span><span class="cursor">|</span></div>
-            <!-- <h1>Hey! I'm Akansha, a</h1> -->
-            <!-- <div class="wrapper row"> -->
-                <!-- <span>&nbsp;</span><span class="text"></span><span class="cursor">|</span> -->
-            <!-- </div> -->
+            
+            <h1>Hey! I'm Akansha, a</h1>
+            <div class="wrapper row">
+                <span>&nbsp;</span><span class="text"></span><span class="cursor">|</span>
+            </div> -->
+            <div class="image-container">
+                <img 
+                    src="images/bunny.jpg"
+                    class="image"
+                    data-mdb-toggle="animation"
+                    data-mdb-animation="slide-in-left"
+                    data-mdb-animation-start="onScroll"
+                ></img>
+                <div class="caption">
+                    <div class="wrapper mb-3"><span class="text"></span><span class="cursor">|</span></div>
+                    <p class="mb-4">I'm Akansha Negi, a third year computer science student at Truman State University. I like messing around with code and all things athletics.</p>
+                </div>
+            </div>
             
             <div class="about">
-                <h2>I programmed my first project on khan academy in 2016 and I've been coding ever since.
-                    Check out what I've been working on recently!</h2>
+                <!-- <h2>I programmed my first project on khan academy in 2016 and I've been coding ever since.
+                    Check out what I've been working on recently!</h2> -->
 
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">
                                 TreeHacks 2024
@@ -140,8 +169,7 @@
                             <p class="learn-more">Learn more <a href="">here</a>.</p>        
                         </div>
                         <img src="https://placehold.it/150" class="card-img-right" alt="Sample Image">
-                    </div>
-                    
+                    </div> -->
             </div>
 
             <div class="projects">
@@ -149,13 +177,13 @@
                 <br/>
                 <br/>
                 <br/>
-                <!-- <div class="container">
-                    <div class="box box-1" style="--img: url(images/about-me.jpg);" data-text="Kora- The AI Robot"></div>
-                    <div class="box box-2" style="--img: url(images/about-me.jpg);" data-text="Sliding Puzzle"></div>
-                    <div class="box box-3" style="--img: url(images/khanAcademy-full.png);" data-text="Weather App"></div>
-                    <div class="box box-4" style="--img: url(images/khanAcademy.png);" data-text="GUI Projects"></div>
-                    <div class="box box-5" style="--img: url(images/khanAcademy-code.png);" data-text="Mitsui"></div>
-                </div> -->
+                <div class="container">
+                    <div class="box box-1" style="--img: url(images/khanAcademy-code.png);" data-text="Video Game Dev"></div>
+                    <div class="box box-2" style="--img: url(images/groupgrub.png);" data-text="GroupGrub"></div>
+                    <div class="box box-3" style="--img: url(images/valentine.png);" data-text="Valentine"></div>
+                    <div class="box box-4" style="--img: url(images/yippee.gif);" data-text="Sliding Puzzle"></div>
+                    <div class="box box-5" style="--img: url(images/about-me.jpg);" data-text="Your Next Project"></div>
+                </div>
                 <br/>
                 <br/>
                 <br/>
