@@ -24,7 +24,7 @@ h2 {
 h3 {
   font-family: 'Playfair Display', serif;
   text-align: left;
-  font-size: 1.4rem;
+  font-size: 2.1rem;
   font-style:italic;
   @media only screen and (max-width: 768px) {
     font-size:1.875rem;
@@ -639,7 +639,7 @@ body {
   display: flex;
   /* justify-content: center; */
   margin-left: 10%;
-  margin-right: 13%;
+  margin-right: 10%;
 }
 
 .image-right {
@@ -667,8 +667,9 @@ body {
   padding-left: 50px;
 }
 
-.caption-right {
-  padding-right:30px;
+.caption-left {
+  padding-top: 50px;
+  padding-right: 50px;
 }
 
 .img1:hover {
@@ -678,6 +679,8 @@ body {
 /* projects section */
 .projects {
   padding-top: 4rem;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .container {
@@ -686,8 +689,8 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	gap: 1em;
-	width: 100vw;
-	height: 400px;
+	width: 70vw;
+	height: 300px;
 	transition: all 400ms;
 }
 
