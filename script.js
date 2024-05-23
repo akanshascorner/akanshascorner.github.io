@@ -7,20 +7,20 @@ const root = document.documentElement;
 // Function to toggle light and dark themes
 function toggleTheme() {
 	if (themeSwitch.checked) {
-		root.style.setProperty('--bg-color', '#181D27');  // Dark mode background color
+		root.style.setProperty('--bg-color', 'hsl(0 0% 6%)');  // Dark mode background color
 		// root.style.setProperty('--bg-color', '#2D283E'); // Dark mode purple background color
 		root.style.setProperty('--text-color', 'white'); // Dark mode text color
 		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
-		root.style.setProperty('--menu-bg-color', '#2D283E');// Dark mode menu background color
-		root.style.setProperty('--contact-bg-color', '#FFFDF3'); // Dark mode contact footer bg color
-		root.style.setProperty('--contact-text-color', 'black'); // Dark mode contact footer text color
+		root.style.setProperty('--menu-bg-color', '#181D27');// Dark mode menu background color
+		// root.style.setProperty('--contact-bg-color', '#FFFDF3'); // Dark mode contact footer bg color
+		// root.style.setProperty('--contact-text-color', 'black'); // Dark mode contact footer text color
 	} else {
 		root.style.setProperty('--bg-color', '#FFFDF3'); // Light mode background color
 		root.style.setProperty('--text-color', 'black');  // Light mode text color
 		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
 		root.style.setProperty('--menu-bg-color', '#FFFDF3');// light mode menu background color
-		root.style.setProperty('--contact-bg-color', '#181D27'); //Light mode contact footer bg color
-		root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
+		// root.style.setProperty('--contact-bg-color', 'hsl(0 0% 6%)'); //Light mode contact footer bg color
+		// root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
 	}
 }
 
@@ -62,6 +62,7 @@ function scrollToTop() {
 const homeDrawer = document.querySelector('.chest-drawer--top');
 const projectsDrawer = document.querySelector('.chest-drawer--middle');
 const contactDrawer = document.querySelector('.chest-drawer--bottom');
+const projectsButton = document.querySelector('.projects-button');
 const scrollOffset = 6.5;
 homeDrawer.addEventListener('click', function () {
     const home = document.querySelector('.item-header'); //about or item-header
@@ -77,6 +78,10 @@ contactDrawer.addEventListener('click', function () {
     const footer = document.querySelector('.item-footer');
     footer.scrollIntoView({ behavior: 'smooth' });
 	HANDLE_TOGGLE();
+});
+projectsButton.addEventListener('click', function () {
+    const projects = document.querySelector('.projects');
+    projects.scrollIntoView({ behavior: 'smooth' });
 });
 
 //Get this to work only when on about me page
@@ -197,3 +202,13 @@ var loader = document.getElementById("preloader");
             loader.style.display = "none";
             document.body.style.overflow = "auto";
 })
+
+//buttons
+const UPDATE = ({ target, x, y }) => {
+    const bounds = target.getBoundingClientRect();
+    target.style.setProperty("--x", x - bounds.left);
+    target.style.setProperty("--y", y - bounds.top);
+  };
+  
+  const BTNS = document.querySelectorAll("button");
+  BTNS.forEach(BTN => BTN.addEventListener("pointermove", UPDATE));
