@@ -1,22 +1,37 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:500);
 @import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 
+.danfo-header {
+  font-family: "Danfo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size:3rem;
+  font-variation-settings:
+    "ELSH" 0;
+}
+
+.jacquard-12-regular {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size:3.5rem;
+}
+
 h1 {
-  text-align: left;
-  font-size: 3.5rem;
-  margin-left: 15%;
+  font-family: 'Playfair Display', serif;
+  justify-self: center;
+  /* text-decoration-line: underline; */
+  font-size: 2.5rem;
+  font-style:italic;
   @media only screen and (max-width: 768px) {
     font-size:1.875rem;
-    margin-left: 0%;
     }
 }
+
 h2 {
-  font-family: 'Playfair Display', serif;
   text-align: left;
-  padding-left: 10rem;
-  padding-right: 10rem;
-  font-size: 1.5rem;
-  padding-bottom: 20px;
+  font-size: 2.5rem;
   @media only screen and (max-width: 768px) {
     font-size:1.875rem;
     }
@@ -24,8 +39,9 @@ h2 {
 h3 {
   font-family: 'Playfair Display', serif;
   text-align: left;
+  /* text-decoration-line: underline; */
   font-size: 2.1rem;
-  font-style:italic;
+  /* font-style:italic; */
   @media only screen and (max-width: 768px) {
     font-size:1.875rem;
     }
@@ -129,6 +145,7 @@ p {
   --menu-bg-color: #FFFDF3; /*Default background color for menu */
   --contact-bg-color: hsl(0 0% 6%);
   --contact-text-color: white;
+  --project-card-color: #FFFEF7;
 }
 
 body {
@@ -174,7 +191,7 @@ body {
   span.text {
     text-align: left;
     vertical-align: middle;
-    font-size: 3rem;
+    font-size: 2.7rem;
   }
 
   span.cursor {
@@ -663,7 +680,7 @@ body {
 }
 
 .caption {
-  padding-top: 50px;
+  padding-top: 80px;
   padding-left: 50px;
 }
 
@@ -678,7 +695,7 @@ body {
 
 /* projects section */
 .projects {
-  padding-top: 4rem;
+  padding-top: 20px;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -1150,4 +1167,153 @@ body {
       0.9925 68.11%, 1
     );
   }
+}
+
+/* Project cards */
+/* @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap"); */
+
+ul {
+  list-style: none;
+}
+.cards {
+  position: relative;
+}
+
+.cards__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  --flow-space: 0.5em;
+  --hsl: var(--hue), var(--saturation), var(--lightness);
+  padding: 1.5em 2em;
+  display: grid;
+  /* grid-template-rows: auto 1fr; */
+  align-items: start;
+  /* gap: 1.25em; */
+  color: var(--text-color);
+  background-color: var(--project-card-color);
+  border: 1px solid #eceff133;
+  border-radius: 15px;
+}
+
+.card:nth-child(1) {
+  --hue: 165;
+  --saturation: 82.26%;
+  --lightness: 51.37%;
+}
+
+.card:nth-child(2) {
+  --hue: 291.34;
+  --saturation: 95.9%;
+  --lightness: 61.76%;
+}
+
+.card:nth-child(3) {
+  --hue: 338.69;
+  --saturation: 100%;
+  --lightness: 48.04%;
+}
+
+.card__bullets {
+  line-height: 1.4;
+}
+
+.card__bullets li::before {
+  display: inline-block;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+  transform: translatey(0.25ch);
+  margin-right: 1ch;
+}
+
+.card__heading {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+
+.card__price {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1.25em);
+}
+
+.cta {
+  display: block;
+  align-self: end;
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  text-decoration: none !important;
+  color: #fff !important;
+  background-color: #0d0d0d;
+  padding: 0.7em;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--opacity, 0);
+  -webkit-mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  transition: 400ms mask ease;
+  will-change: mask;
+}
+
+.overlay .card {
+  background-color: hsla(var(--hsl), 0.15);
+  border-color: hsla(var(--hsl), 1);
+  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+}
+
+.overlay .cta {
+  display: block;
+  grid-row: -1;
+  width: 100%;
+  background-color: hsl(var(--hsl));
+  box-shadow: 0 0 0 1px hsl(var(--hsl));
+}
+
+:not(.overlay) > .card {
+  transition: 400ms background ease;
+  will-change: background;
+}
+
+:not(.overlay) > .card:hover {
+  --lightness: 95%;
+  background: hsla(var(--hsl), 0.1);
+}
+
+/*ICONS*/
+/* .fa:hover {
+  opacity: 0.7;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+} */
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
 }

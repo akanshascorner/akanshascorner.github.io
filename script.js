@@ -7,20 +7,24 @@ const root = document.documentElement;
 // Function to toggle light and dark themes
 function toggleTheme() {
 	if (themeSwitch.checked) {
-		root.style.setProperty('--bg-color', 'hsl(0 0% 6%)');  // Dark mode background color
-		// root.style.setProperty('--bg-color', '#2D283E'); // Dark mode purple background color
-		root.style.setProperty('--text-color', 'white'); // Dark mode text color
-		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// Dark mode svg color
-		root.style.setProperty('--menu-bg-color', '#181D27');// Dark mode menu background color
-		// root.style.setProperty('--contact-bg-color', '#FFFDF3'); // Dark mode contact footer bg color
-		// root.style.setProperty('--contact-text-color', 'black'); // Dark mode contact footer text color
+		//Dark mode
+		root.style.setProperty('--bg-color', 'hsl(0 0% 6%)');  // background color
+		// root.style.setProperty('--bg-color', '#2D283E'); // purple background color
+		root.style.setProperty('--text-color', 'white'); // text color
+		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// svg color
+		root.style.setProperty('--menu-bg-color', '#181D27');// menu background color
+		// root.style.setProperty('--contact-bg-color', '#FFFDF3'); // contact footer bg color
+		// root.style.setProperty('--contact-text-color', 'black'); // contact footer text color
+		root.style.setProperty('--project-card-color', '#2b2b2b');// project cards background color
 	} else {
+		//Light mode
 		root.style.setProperty('--bg-color', '#FFFDF3'); // Light mode background color
 		root.style.setProperty('--text-color', 'black');  // Light mode text color
 		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
 		root.style.setProperty('--menu-bg-color', '#FFFDF3');// light mode menu background color
 		// root.style.setProperty('--contact-bg-color', 'hsl(0 0% 6%)'); //Light mode contact footer bg color
 		// root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
+		root.style.setProperty('--project-card-color', '#FFFEF7');// Light mode project cards background color
 	}
 }
 
@@ -143,7 +147,10 @@ $(function() {
 		// 	'student athlete.',
 		// ],
 		message: [
-			'Hello!'
+			'Software engineer.',
+			'Video game developer.',
+			'Teaching assistant.',
+
 		],
 		counterS: 0,
 		counterL: 0,
@@ -179,7 +186,7 @@ $(function() {
 			}
 			else {
 				this.deleteS = true; 
-				speed = this.message[this.counterS] == message ? 10000 : 60;
+				speed = this.message[this.counterS] == message ? 2000 : 60;
 				this.$text.text(message);
 				if (message == '') {
 					this.deleteS = false;
@@ -212,3 +219,51 @@ const UPDATE = ({ target, x, y }) => {
   
   const BTNS = document.querySelectorAll("button");
   BTNS.forEach(BTN => BTN.addEventListener("pointermove", UPDATE));
+
+  //Project Cards
+  console.clear();
+
+const cardsContainer = document.querySelector(".cards");
+const cardsContainerInner = document.querySelector(".cards__inner");
+const cards = Array.from(document.querySelectorAll(".card"));
+const overlay = document.querySelector(".overlay");
+
+const applyOverlayMask = (e) => {
+  const overlayEl = e.currentTarget;
+  const x = e.pageX - cardsContainer.offsetLeft;
+  const y = e.pageY - cardsContainer.offsetTop;
+
+  overlayEl.style = `--opacity: 1; --x: ${x}px; --y:${y}px;`;
+};
+
+const createOverlayCta = (overlayCard, ctaEl) => {
+  const overlayCta = document.createElement("div");
+  overlayCta.classList.add("cta");
+  overlayCta.textContent = ctaEl.textContent;
+  overlayCta.setAttribute("aria-hidden", true);
+  overlayCard.append(overlayCta);
+};
+
+const observer = new ResizeObserver((entries) => {
+  entries.forEach((entry) => {
+    const cardIndex = cards.indexOf(entry.target);
+    let width = entry.borderBoxSize[0].inlineSize;
+    let height = entry.borderBoxSize[0].blockSize;
+
+    if (cardIndex >= 0) {
+      overlay.children[cardIndex].style.width = `${width}px`;
+      overlay.children[cardIndex].style.height = `${height}px`;
+    }
+  });
+});
+
+const initOverlayCard = (cardEl) => {
+  const overlayCard = document.createElement("div");
+  overlayCard.classList.add("card");
+  createOverlayCta(overlayCard, cardEl.lastElementChild);
+  overlay.append(overlayCard);
+  observer.observe(cardEl);
+};
+
+cards.forEach(initOverlayCard);
+document.body.addEventListener("pointermove", applyOverlayMask);
