@@ -144,12 +144,6 @@ function resetDrawers() {
 //Header
 $(function() {
 	var message = {
-
-		// message: [
-		// 	'software engineer.',
-		// 	'teaching assistant.',
-		// 	'student athlete.',
-		// ],
 		message: [
 			'Software engineer.',
 			'Teaching assistant.',
