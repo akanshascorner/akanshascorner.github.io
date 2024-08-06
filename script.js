@@ -16,6 +16,8 @@ function toggleTheme() {
 		// root.style.setProperty('--contact-bg-color', '#FFFDF3'); // contact footer bg color
 		// root.style.setProperty('--contact-text-color', 'black'); // contact footer text color
 		root.style.setProperty('--project-card-color', '#2b2b2b');// project cards background color
+		// root.style.setProperty('--fg', 'hsl(0 0% 6%)'); // button foreground
+		// root.style.setProperty('--bg', '#FFFEF7'); // button background
 	} else {
 		//Light mode
 		root.style.setProperty('--bg-color', '#FFFDF3'); // Light mode background color
@@ -25,6 +27,8 @@ function toggleTheme() {
 		// root.style.setProperty('--contact-bg-color', 'hsl(0 0% 6%)'); //Light mode contact footer bg color
 		// root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
 		root.style.setProperty('--project-card-color', '#FFFEF7');// Light mode project cards background color
+		// root.style.setProperty('--fg', 'hsl(0, 0%, 90%)'); // Light mode button foreground
+		// root.style.setProperty('--bg', '#FFFDF3'); // Light mode button background
 	}
 }
 
@@ -148,9 +152,9 @@ $(function() {
 		// ],
 		message: [
 			'Software engineer.',
-			'Video game developer.',
 			'Teaching assistant.',
-
+			'Student Athlete.',
+			'Hackathon Winner.',
 		],
 		counterS: 0,
 		counterL: 0,

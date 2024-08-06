@@ -56,6 +56,12 @@ p {
     }
 }
 
+.small-text {
+  padding-top: 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .item-header {
   grid-area: header;
   /* font-family: 'Silkscreen', sans-serif; */
@@ -76,7 +82,7 @@ p {
   grid-area: footer;
   background: var(--contact-bg-color);
   color: var(--contact-text-color);
-  padding-top: 4rem;
+  text-align: center;
 }
 
 .grid-container {
@@ -130,16 +136,17 @@ p {
 
 .navbar-expand-sm {
   justify-content: right;
+  margin: 0 !important;
 }
 
 .navbar {
   padding-top: 0 !important;
-  margin-right: 50px !important;
+  margin-right: 120px !important;
 }
 
 /*menu nav button*/
 :root {
-  --bg-color: #FFFDF3; /* Default background color for light mode */
+  --bg-color: #FFFEF7; /* Default background color for light mode */
   --text-color: black;   /* Default text color for light mode */
   --svg-color: hsl(0, 0%, 12%); /* Default nav toggle color for light mode */
   --menu-bg-color: #FFFDF3; /*Default background color for menu */
@@ -254,7 +261,6 @@ body {
   }
 
   .sticky {
-    /* position: sticky; */
     position: fixed;
     z-index: 5;
   }
@@ -857,7 +863,7 @@ body {
   width: 0;
 }
 .toggle-slot {
-  position: relative;
+  position: fixed;
   height: 2.5em;
   width: 5em;
   border: 1.25px solid #e4e7ec;
@@ -1077,7 +1083,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 :root {
   --bg: hsl(0 0% 6%);
-  --fg: hsl(0 0% 90%);
+  --fg: #FFFDF3;
 }
 
 body {
@@ -1090,8 +1096,7 @@ body {
 
 .center-mb {
   display: flex;
-  /* justify-content: center; */
-  margin-left:33%;
+  justify-content: center;
 }
 
 .mouse-button {
@@ -1102,7 +1107,6 @@ body {
   font-family: sans-serif;
   padding: 1rem 2rem;
   border-radius: 100px;
-  /* border: 2px solid var(--button-fg); */
   background: var(--button-bg);
   cursor: pointer;
   touch-action: none;
@@ -1300,20 +1304,25 @@ ul {
 }
 
 /*ICONS*/
-/* .fa:hover {
+.fa:hover {
   opacity: 0.7;
 }
 
-.fa {
+.fa, .fa-solid {
   padding: 20px;
   font-size: 30px;
   width: 50px;
+  height: 50px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-} */
+}
 
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
+.fa-icon {
+  color: inherit;
+}
+
+.fa-icon:hover {
+  text-decoration: none;
+  color: inherit;
 }
