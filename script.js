@@ -9,26 +9,20 @@ function toggleTheme() {
 	if (themeSwitch.checked) {
 		//Dark mode
 		root.style.setProperty('--bg-color', 'hsl(0 0% 6%)');  // background color
-		// root.style.setProperty('--bg-color', '#2D283E'); // purple background color
 		root.style.setProperty('--text-color', 'white'); // text color
 		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// svg color
 		root.style.setProperty('--menu-bg-color', '#181D27');// menu background color
-		// root.style.setProperty('--contact-bg-color', '#FFFDF3'); // contact footer bg color
-		// root.style.setProperty('--contact-text-color', 'black'); // contact footer text color
 		root.style.setProperty('--project-card-color', '#2b2b2b');// project cards background color
-		// root.style.setProperty('--fg', 'hsl(0 0% 6%)'); // button foreground
-		// root.style.setProperty('--bg', '#FFFEF7'); // button background
+		root.style.setProperty('--button-border', 'hidden');// button border nonexistent!!
+		//^^^^ FIGURE OUT HOW TO MAKE IT GONE
 	} else {
 		//Light mode
 		root.style.setProperty('--bg-color', '#FFFDF3'); // Light mode background color
 		root.style.setProperty('--text-color', 'black');  // Light mode text color
 		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
 		root.style.setProperty('--menu-bg-color', '#FFFDF3');// light mode menu background color
-		// root.style.setProperty('--contact-bg-color', 'hsl(0 0% 6%)'); //Light mode contact footer bg color
-		// root.style.setProperty('--contact-text-color', 'white'); //Light mode contact footer text color
 		root.style.setProperty('--project-card-color', '#FFFEF7');// Light mode project cards background color
-		// root.style.setProperty('--fg', 'hsl(0, 0%, 90%)'); // Light mode button foreground
-		// root.style.setProperty('--bg', '#FFFDF3'); // Light mode button background
+		root.style.setProperty('--button-border', '2px solid var(--button-fg)');// Light mode button border exists!!
 	}
 }
 
@@ -145,10 +139,11 @@ function resetDrawers() {
 $(function() {
 	var message = {
 		message: [
-			'Software engineer.',
-			'Teaching assistant.',
-			'Student Athlete.',
+			'Software Engineer.',
 			'Hackathon Winner.',
+			'Student Athlete.',
+			'Full Stack Developer.',
+			'Teaching Assistant.',
 		],
 		counterS: 0,
 		counterL: 0,

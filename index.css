@@ -153,6 +153,7 @@ p {
   --contact-bg-color: hsl(0 0% 6%);
   --contact-text-color: white;
   --project-card-color: #FFFEF7;
+  --button-border: 2px solid var(--button-fg);
 }
 
 body {
@@ -686,7 +687,7 @@ body {
 }
 
 .caption {
-  padding-top: 80px;
+  padding-top: 20px;
   padding-left: 50px;
 }
 
@@ -701,160 +702,12 @@ body {
 
 /* projects section */
 .projects {
-  padding-top: 20px;
+  padding-top: 6.5rem;
   margin-left: 10%;
   margin-right: 10%;
 }
 
-.container {
-	position: relative;
-  font-family: "Figtree", sans-serif;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	gap: 1em;
-	width: 70vw;
-	height: 300px;
-	transition: all 400ms;
-}
-
-.container:hover .box {
-	filter: grayscale(100%) opacity(24%);
-}
-
-.box {
-	position: relative;
-	background: var(--img) center center;
-	background-size: cover;
-	transition: all 400ms;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.container .box:hover {
-	filter: grayscale(0%) opacity(100%);
-}
-
-.container:has(.box-1:hover) {
-	grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
-}
-
-.container:has(.box-2:hover) {
-	grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
-}
-
-.container:has(.box-3:hover) {
-	grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
-}
-
-.container:has(.box-4:hover) {
-	grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
-}
-
-.container:has(.box-5:hover) {
-	grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
-}
-
-.box:nth-child(odd) {
-	transform: translateY(-16px);
-}
-
-.box:nth-child(even) {
-	transform: translateY(16px);
-}
-
-.box::after {
-	content: attr(data-text);
-	position: absolute;
-	bottom: 20px;
-	background: #000;
-	color: #fff;
-	padding: 10px 10px 10px 14px;
-	letter-spacing: 4px;
-	text-transform: uppercase;
-	transform: translateY(60px);
-	opacity: 0;
-	transition: all 400ms;
-}
-
-.box:hover::after {
-	transform: translateY(0);
-	opacity: 1;
-	transition-delay: 400ms;
-}
-
-/*light/dark theme switch*/
-/* input {
-	display: block;
-	margin-bottom: 1.5em;
-}
-.l {
-	background-color: rgba(0,0,0,0.7);
-	border-radius: 0.75em;
-	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
-	color: #fdea7b;
-	display: inline-flex;
-	align-items: center;
-	margin: auto;
-	padding: 0.15em;
-	width: 3em;
-	height: 1.5em;
-	transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-.l:before, .l:after {
-	content: "";
-	display: block;
-}
-.l:before {
-	background-color: #d7d7d7;
-	border-radius: 50%;
-	width: 1.2em;
-	height: 1.2em;
-	transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-	z-index: 1;
-}
-.l:after {
-	background:
-		linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
-		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
-		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
-	background-repeat: no-repeat;
-	border: 0.25em solid transparent;
-	border-left: 0.4em solid #d8d8d8;
-	border-right: 0 solid transparent;
-	transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-	transform: translateX(-22.5%);
-	transform-origin: 25% 50%;
-	width: 1.2em;
-	height: 1em;
-}
-/* Checked */
-/* .l:checked {
-	background-color: rgba(0,0,0,0.45);
-	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
-}
-.l:checked:before {
-	background-color: currentColor;
-	transform: translateX(125%)
-}
-.l:checked:after {
-	border-left-color: currentColor;
-	transform: translateX(-2.5%) rotateY(180deg);
-} */
-/* Other States */
-/* .l:focus {
-	outline: 0;
-} */
-
-/* .toggleThing {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-} */
-
+/* Light/Dark Theme Toggle Switch */
 .toggle-checkbox {
   position: absolute;
   opacity: 0;
@@ -966,117 +819,7 @@ body {
   to { rotate: -360deg; }
 }
 
-/*
-
-All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 77). 
-        
-The 'supports' rule will only run if your browser supports CSS grid.
-
-Flexbox is used as a fallback so that browsers which don't support grid will still recieve an identical layout.
-
-*/
-
-.gallery {
-	display: flex;
-	flex-wrap: wrap;
-	/* Compensate for excess margin on outer gallery flex items */
-	margin: -1rem -1rem;
-}
-
-.gallery-item {
-	/* Minimum width of 24rem and grow to fit available space */
-	flex: 1 0 24rem;
-	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-	margin: 1rem;
-	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-	overflow: hidden;
-}
-
-.gallery-image {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transition: transform 400ms ease-out;
-}
-
-.gallery-image:hover {
-	transform: scale(1.15);
-}
-
-/*
-
-The following rule will only run if your browser supports CSS grid.
-
-Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
-
-*/
-
-@supports (display: grid) {
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-		grid-gap: 2rem;
-	}
-
-	.gallery,
-	.gallery-item {
-		margin: 0;
-	}
-}
-
-/* card component */
-.card {
-  display: flex;
-  flex-direction: row;
-  max-width: 750px;
-  margin: 20px auto;
-  border: 0px;
-  border-radius: 0px;
-  padding: 20px;
-  overflow: hidden;
-    /* background-color: #fff; */
-  /* border-radius: 5px; */
-  padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  max-width: 200px;
-  height: 250px;
-  /* border-radius: 8px; */
-}
-
-.card-title {
-  font-size: 23px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-}
-
-.card-text {
-  font-size: 18px;
-  color: #333;
-}
-
-.card-date {
-  font-size: 18px;
-  font-weight: normal;
-  color: rgb(182, 182, 182);
-  margin-right: 10px;
-}
-
-.learn-more {
-  margin-bottom:0;
-  font-size: 16px;
-}
-
 /*buttons*/
-
 * {
   box-sizing: border-box;
 }
@@ -1107,6 +850,7 @@ body {
   font-family: sans-serif;
   padding: 1rem 2rem;
   border-radius: 100px;
+  /* border: var(--button-border); */
   background: var(--button-bg);
   cursor: pointer;
   touch-action: none;
@@ -1173,136 +917,6 @@ body {
   }
 }
 
-/* Project cards */
-/* @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap"); */
-
-ul {
-  list-style: none;
-}
-.cards {
-  position: relative;
-}
-
-.cards__inner {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  --flow-space: 0.5em;
-  --hsl: var(--hue), var(--saturation), var(--lightness);
-  padding: 1.5em 2em;
-  display: grid;
-  /* grid-template-rows: auto 1fr; */
-  align-items: start;
-  /* gap: 1.25em; */
-  color: var(--text-color);
-  background-color: var(--project-card-color);
-  border: 1px solid #eceff133;
-  border-radius: 15px;
-}
-
-.card:nth-child(1) {
-  --hue: 165;
-  --saturation: 82.26%;
-  --lightness: 51.37%;
-}
-
-.card:nth-child(2) {
-  --hue: 291.34;
-  --saturation: 95.9%;
-  --lightness: 61.76%;
-}
-
-.card:nth-child(3) {
-  --hue: 338.69;
-  --saturation: 100%;
-  --lightness: 48.04%;
-}
-
-.card__bullets {
-  line-height: 1.4;
-}
-
-.card__bullets li::before {
-  display: inline-block;
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
-  transform: translatey(0.25ch);
-  margin-right: 1ch;
-}
-
-.card__heading {
-  font-size: 1.75em;
-  font-weight: 700;
-}
-
-.card__price {
-  font-size: 1.75em;
-  font-weight: 700;
-}
-
-.flow > * + * {
-  margin-top: var(--flow-space, 1.25em);
-}
-
-.cta {
-  display: block;
-  align-self: end;
-  margin: 1em 0 0.5em 0;
-  text-align: center;
-  text-decoration: none !important;
-  color: #fff !important;
-  background-color: #0d0d0d;
-  padding: 0.7em;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  user-select: none;
-  opacity: var(--opacity, 0);
-  -webkit-mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  transition: 400ms mask ease;
-  will-change: mask;
-}
-
-.overlay .card {
-  background-color: hsla(var(--hsl), 0.15);
-  border-color: hsla(var(--hsl), 1);
-  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
-}
-
-.overlay .cta {
-  display: block;
-  grid-row: -1;
-  width: 100%;
-  background-color: hsl(var(--hsl));
-  box-shadow: 0 0 0 1px hsl(var(--hsl));
-}
-
-:not(.overlay) > .card {
-  transition: 400ms background ease;
-  will-change: background;
-}
-
-:not(.overlay) > .card:hover {
-  --lightness: 95%;
-  background: hsla(var(--hsl), 0.1);
-}
-
 /*ICONS*/
 .fa:hover {
   opacity: 0.7;
@@ -1325,4 +939,65 @@ ul {
 .fa-icon:hover {
   text-decoration: none;
   color: inherit;
+}
+
+/* Project Cards */
+.card {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px;
+  max-width: 750px;
+  border: 0px;
+  /* width: calc(100% + 100px); */
+  /* margin-left: 0px; */
+  /* margin-right: 0px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.pastel-blue {
+  background-color: #a1c4fd;
+}
+
+.pastel-yellow {
+  background-color: #ffeaa7;
+}
+
+.content {
+  max-width: 70%; /* Adjusts content width */
+}
+
+.card-title {
+  margin-top: 0;
+  color: #333;
+}
+
+.card-description {
+  color: #555;
+}
+
+:not(.overlay) > .card {
+  transition: 400ms background ease;
+  will-change: background;
+}
+
+:not(.overlay) > .card:hover {
+  --lightness: 95%;
+  background: hsla(var(--hsl), 0.1);
+}
+
+.fixed-image {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 150px;
+  height: auto;
+}
+
+.images img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 20px;
 }
