@@ -65,7 +65,6 @@ const homeDrawer = document.querySelector('.chest-drawer--top');
 const projectsDrawer = document.querySelector('.chest-drawer--middle');
 const contactDrawer = document.querySelector('.chest-drawer--bottom');
 const projectsButton = document.querySelector('.projects-button');
-const scrollOffset = 6.5;
 homeDrawer.addEventListener('click', function () {
     const home = document.querySelector('.item-header'); //about or item-header
     home.scrollIntoView({ behavior: 'smooth' });
@@ -85,17 +84,6 @@ projectsButton.addEventListener('click', function () {
     const projects = document.querySelector('.projects');
     projects.scrollIntoView({ behavior: 'smooth' });
 });
-
-//Get this to work only when on about me page
-// homeDrawer.addEventListener('click', function () {
-//     location.href='index.html';
-// });
-// projectsDrawer.addEventListener('click', function () {
-//     location.href='about.html';
-// });
-// contactDrawer.addEventListener('click', function () {
-//     location.href='project.html';
-// });
 
 //menu open button
 TOGGLE.addEventListener('click', HANDLE_TOGGLE);

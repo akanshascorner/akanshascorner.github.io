@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 
 .danfo-header {
+  position: absolute;
   font-family: "Danfo", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -9,6 +10,7 @@
   font-size:3rem;
   font-variation-settings:
     "ELSH" 0;
+  margin: auto;
 }
 
 .jacquard-12-regular {
@@ -69,7 +71,6 @@ p {
   /* background:#FFFDF3; */
   height: 6.25rem;
   display: grid;
-  align-items: center;
 }
 .item-main {
   /* Main padding starts here */
@@ -135,13 +136,12 @@ p {
 }
 
 .navbar-expand-sm {
-  justify-content: right;
-  margin: 0 !important;
+  justify-self: right;
 }
 
 .navbar {
   padding-top: 0 !important;
-  margin-right: 120px !important;
+  /* margin-right: 120px !important; */
 }
 
 /*menu nav button*/
@@ -186,7 +186,7 @@ body {
   .wrapper {
     margin-top: 0;
     /* width: 100vw; */
-    margin-left: 15%;
+    /* margin-left: 15%; */
     @media only screen and (max-width: 768px) {
       margin-left: 0%;
       }
@@ -689,7 +689,6 @@ body {
 .caption {
   padding-top: 20px;
   padding-left: 50px;
-  display: grid;
 }
 
 .caption-left {
@@ -710,14 +709,14 @@ body {
 
 /* Light/Dark Theme Toggle Switch */
 .toggle-checkbox {
-  position: absolute;
+  position: relative;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
 .toggle-slot {
-  position: fixed;
+  position: relative;
   height: 2.5em;
   width: 5em;
   border: 1.25px solid #e4e7ec;
@@ -947,14 +946,14 @@ body {
   position: relative;
   margin-bottom: 40px;
   padding: 20px;
-  max-width: 750px;
+  max-width: 1250px;
   border: 0px;
   /* width: calc(100% + 100px); */
-  /* margin-left: 0px; */
-  /* margin-right: 0px; */
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   border-radius: 15px;
+  z-index: 0;
 }
 
 .pastel-blue {
@@ -966,7 +965,7 @@ body {
 }
 
 .content {
-  max-width: 70%; /* Adjusts content width */
+  max-width: 100%; /* Adjusts content width */
 }
 
 .card-title {
@@ -976,6 +975,9 @@ body {
 
 .card-description {
   color: #555;
+  margin-left: 30px;
+  margin-right: 50px;
+  margin-top: 20px;
 }
 
 :not(.overlay) > .card {
@@ -990,15 +992,19 @@ body {
 
 .fixed-image {
   position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 150px;
+  top: -25px;
+  left: -40px;
+  width: 100px;
   height: auto;
+  z-index: 1;
 }
 
+/* This adjusts the content card */
 .images img {
-  max-width: 100%;
+  width: 400px;
   height: auto;
-  display: block;
-  margin-top: 20px;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 7px;
 }
