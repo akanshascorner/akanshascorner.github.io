@@ -7,9 +7,10 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size:3rem;
+  font-size:3.5rem;
   font-variation-settings:
     "ELSH" 0;
+  letter-spacing: 5px;
   margin: auto;
 }
 
@@ -74,7 +75,7 @@ p {
 }
 .item-main {
   /* Main padding starts here */
-  padding-top: 2rem;
+  padding-top: 4rem;
   grid-area: main;
   margin: 5rem;
   margin-top:0;
@@ -185,6 +186,7 @@ body {
 
   .wrapper {
     margin-top: 0;
+    margin-bottom: 15px;
     /* width: 100vw; */
     /* margin-left: 15%; */
     @media only screen and (max-width: 768px) {

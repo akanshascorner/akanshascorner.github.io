@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=slidingPuzzle
+comment1.params=
+comment1.target=slidingPuzzle()
+comment2.params=e
+comment2.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment3.params=e
+comment3.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment4.params=e
+comment4.target=void\ keyReleased(java.awt.event.KeyEvent)
+comment5.params=board
+comment5.target=int\ getBlankXPos(java.lang.String[][])
+comment6.params=board
+comment6.target=int\ getInversions(java.lang.String[][])
+comment7.params=board
+comment7.target=boolean\ isSolvable(java.lang.String[][])
+comment8.params=window\ board
+comment8.target=boolean\ gameOver(java.awt.Container,\ java.lang.String[][])
+comment9.params=args
+comment9.target=void\ main(java.lang.String[])
+numComments=10

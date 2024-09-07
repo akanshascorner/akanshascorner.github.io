@@ -8,10 +8,10 @@ const root = document.documentElement;
 function toggleTheme() {
 	if (themeSwitch.checked) {
 		//Dark mode
-		root.style.setProperty('--bg-color', 'hsl(0 0% 6%)');  // background color
-		root.style.setProperty('--text-color', 'white'); // text color
-		root.style.setProperty('--svg-color', 'hsl(0 0% 98%)');// svg color
-		root.style.setProperty('--menu-bg-color', '#181D27');// menu background color
+		root.style.setProperty('--bg-color', '#323232');  // background color
+		root.style.setProperty('--text-color', '#FFFDF3'); // text color
+		root.style.setProperty('--svg-color', '#FFFDF3');// svg color
+		root.style.setProperty('--menu-bg-color', '#1a1a1a');// menu background color
 		root.style.setProperty('--project-card-color', '#2b2b2b');// project cards background color
 		root.style.setProperty('--button-border', 'hidden');// button border nonexistent!!
 		//^^^^ FIGURE OUT HOW TO MAKE IT GONE
