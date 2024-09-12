@@ -693,6 +693,7 @@ body {
   padding: 5px;
   padding-bottom: 10px;
   float: left;
+  object-fit: cover;
 }
 
 .caption {
