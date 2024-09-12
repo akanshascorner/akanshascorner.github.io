@@ -11,7 +11,6 @@
   font-variation-settings:
     "ELSH" 0;
   letter-spacing: 5px;
-  margin: auto;
 }
 
 .jacquard-12-regular {
@@ -686,6 +685,11 @@ body {
   float: left;
   /* data-mdb-toggle:"animation";
   data-mdb-animation:"slide-in-left"; */
+}
+
+.tennis {
+  height: 310px;
+  width: auto;
 }
 
 .caption {
