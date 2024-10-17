@@ -1,28 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:500);
 @import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 
-.danfo-header {
-  position: absolute;
-  font-family: "Danfo", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
+.patua-one-regular {
+  font-family: "Patua One", serif;
+  font-weight: 1000;
   font-style: normal;
-  font-size:3.5rem;
-  font-variation-settings:
-    "ELSH" 0;
-  letter-spacing: 5px;
+  font-size: 3.7rem;
+  justify-self: center;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: #ffeaa7;
 }
 
 .jacquard-12-regular {
   font-family: "Jacquard 12", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size:3.5rem;
+  font-size: 3.5rem;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  justify-self: center;
+  /* justify-self: center; */
   /* text-decoration-line: underline; */
   font-size: 2.5rem;
   font-style:italic;
@@ -719,7 +718,7 @@ body {
 }
 
 /* Light/Dark Theme Toggle Switch */
-.toggle-checkbox {
+/* .toggle-checkbox {
   position: relative;
   opacity: 0;
   cursor: pointer;
@@ -798,7 +797,7 @@ body {
 .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
   opacity: 1;
   transform: translate(3em, 0.5em) rotate(-15deg);
-}
+} */
 
 
 /*loader*/

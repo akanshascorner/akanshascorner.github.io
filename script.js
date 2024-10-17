@@ -1,32 +1,31 @@
 const TOGGLE = document.querySelector('button');
 const CHEST = document.querySelector('.chest');
 const RECT = document.querySelector('.nav-rect');
-const themeSwitch = document.getElementById('themeSwitch');
+// const themeSwitch = document.getElementById('themeSwitch');
 const root = document.documentElement;
 
 // Function to toggle light and dark themes
-function toggleTheme() {
-	if (themeSwitch.checked) {
-		//Dark mode
-		root.style.setProperty('--bg-color', '#323232');  // background color
-		root.style.setProperty('--text-color', '#FFFDF3'); // text color
-		root.style.setProperty('--svg-color', '#FFFDF3');// svg color
-		root.style.setProperty('--menu-bg-color', '#1a1a1a');// menu background color
-		root.style.setProperty('--project-card-color', '#2b2b2b');// project cards background color
-		root.style.setProperty('--button-border', 'hidden');// button border nonexistent!!
-		//^^^^ FIGURE OUT HOW TO MAKE IT GONE
-	} else {
-		//Light mode
-		root.style.setProperty('--bg-color', '#FFFDF3'); // Light mode background color
-		root.style.setProperty('--text-color', 'black');  // Light mode text color
-		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
-		root.style.setProperty('--menu-bg-color', '#FFFDF3');// light mode menu background color
-		root.style.setProperty('--project-card-color', '#FFFEF7');// Light mode project cards background color
-		root.style.setProperty('--button-border', '2px solid var(--button-fg)');// Light mode button border exists!!
-	}
-}
+// function toggleTheme() {
+// 	if (themeSwitch.checked) {
+// 		//Dark mode
+// 		root.style.setProperty('--bg-color', '#323232');  // background color
+// 		root.style.setProperty('--text-color', '#FFFDF3'); // text color
+// 		root.style.setProperty('--svg-color', '#FFFDF3');// svg color
+// 		root.style.setProperty('--menu-bg-color', '#1a1a1a');// menu background color
+// 		root.style.setProperty('--project-card-color', '#2b2b2b');// project cards background color
+// 		root.style.setProperty('--button-border', 'hidden');// button border nonexistent!!
+// 	} else {
+// 		//Light mode
+// 		root.style.setProperty('--bg-color', '#FFFDF3'); // Light mode background color
+// 		root.style.setProperty('--text-color', 'black');  // Light mode text color
+// 		root.style.setProperty('--svg-color', 'hsl(0, 0%, 12%)'); //Light mode svg color
+// 		root.style.setProperty('--menu-bg-color', '#FFFDF3');// light mode menu background color
+// 		root.style.setProperty('--project-card-color', '#FFFEF7');// Light mode project cards background color
+// 		root.style.setProperty('--button-border', '2px solid var(--button-fg)');// Light mode button border exists!!
+// 	}
+// }
 
-themeSwitch.addEventListener('change', toggleTheme);
+// themeSwitch.addEventListener('change', toggleTheme);
 
 // Set initial state: move chest off-screen to the left
 gsap.set([CHEST, RECT], { x: '-185%'});
