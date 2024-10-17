@@ -1018,3 +1018,32 @@ body {
   margin-left: 20px;
   border-radius: 7px;
 }
+
+/* Hide mobile for now */
+@media (max-width: 992px) {
+  body * {
+    display: none;
+  }
+
+  body {
+    background: var(--bg-color);
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    justify-content: left;
+    align-items: start;
+  }
+
+  .mobile-message {
+    display: block !important;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+
+/* Default styles for larger screens */
+.mobile-message {
+  display: none; /* Hide message on larger screens */
+}
